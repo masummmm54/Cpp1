@@ -67,7 +67,9 @@ void	add(PhoneBook *book)
 
 void	search(PhoneBook *book)
 {
-	int	index = 0;
+	int			index = 0;
+	std::string	index_str;
+
 	if (book->contact_num == 0)
 	{
 		std::cout << RED << "No contact registered!" << RESET << std::endl;
@@ -83,7 +85,12 @@ void	search(PhoneBook *book)
 	}
 	std::cout << MAGENTA << " ------------------------------------------- " << RESET << std::endl;
 	std::cout << BLUE << "Index number for contact: " << RESET << std::endl;
-	std::cin >> index;
+	if (!std::getline(std::cin, index_str))
+	{
+		if (std::cin.eof())
+			exit(0);
+	}
+	index = std::stoi(index_str);
 	if (index <= book->contact_num && index > 0)
 		book->contacts[index - 1].show_contact();
 	else 
@@ -103,7 +110,7 @@ int	main(int ac, char **av)
 	{
 		std::cout << CYAN << "Possible commands" << RESET << std::endl;
 		std::cout << CYAN << "1.ADD 2.SEARCH 3.EXIT" << RESET << std::endl;
-		if (!(std::cin >> input))
+		if (!std::getline(std::cin, input))
 		{
 			if (std::cin.eof())
 				break;
@@ -116,7 +123,6 @@ int	main(int ac, char **av)
 			search(&book);
 		else if (input == "EXIT" || input == "3")
 			break;
-		input.clear();
 	}
 	return (0);
 }

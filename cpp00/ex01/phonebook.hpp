@@ -36,7 +36,7 @@ class PhoneBook
 	public:
 	PhoneBook() {}
 	~PhoneBook() {
-		std::cout << "Phonebook closing..." << std::endl;
+		std::cout << RED << "Phonebook closing..." << RESET << std::endl;
 	}
 	int			contact_num;
 	int			index;
