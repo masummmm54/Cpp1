@@ -12,7 +12,6 @@ int	main(int ac, char **av)
 	{
 		ziombe1[i].announce();
 	}
-
 	delete[] ziombe1;
 	return (0);
 }
