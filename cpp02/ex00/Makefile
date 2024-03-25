@@ -17,16 +17,16 @@ CC = c++
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./include/
 
-SRC = main.cpp Phonebook.cpp Contact.cpp
+SRC = main.cpp Harl.cpp
 
 OBJ_DIR = obj
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
-NAME = phonebook
+NAME = fixed
 
 $(NAME) : $(OBJ_DIR) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	echo "$(COLOUR_GREEN)Phonebook compiled successfully!$(COLOUR_END)"
+	echo "$(COLOUR_GREEN)$(NAME) compiled successfully!$(COLOUR_END)"
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
@@ -41,7 +41,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	echo "$(COLOUR_CYAN)$(COLOUR_UNDERLINE)Phonebook cleaned successfully!$(COLOUR_END)"
+	echo "$(COLOUR_CYAN)$(COLOUR_UNDERLINE)$(NAME) cleaned successfully!$(COLOUR_END)"
 
 re: fclean all
 

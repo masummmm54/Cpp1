@@ -17,7 +17,7 @@ class Replace
 	std::string rep;
 
 	public:
-	Replace(char **av);
+	Replace(std::string av[5]);
 	~Replace();
 
 	void	get_lines();

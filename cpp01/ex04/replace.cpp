@@ -2,7 +2,7 @@
 #include "replace.hpp"
 
 
-Replace::Replace (char **av)
+Replace::Replace (std::string av[5])
 {
 	this->infile = av[1];
 	this->outfile = infile + ".replace";
@@ -36,9 +36,9 @@ void	Replace::get_lines()
 
 	std::string str;
 	std::fstream fs;
-	std::ofstream outputFile(outfile);
+	std::ofstream outputFile(outfile.c_str());
 
-	fs.open(infile);
+	fs.open(infile.c_str());
 	if (outputFile.is_open())
 	{
 		std::cout.rdbuf(outputFile.rdbuf());

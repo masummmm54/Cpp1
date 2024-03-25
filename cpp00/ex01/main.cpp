@@ -1,5 +1,5 @@
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 int	all_num(std::string number)
 {
@@ -10,7 +10,7 @@ int	all_num(std::string number)
 	while (number[i])
 	{
 		if (!(std::isdigit(number[i])))
-			return (std::cout << RED << "Please enter phone number" << RESET <<std::endl , 0);
+			return (std::cout << RED << "Please enter a number" << RESET <<std::endl , 0);
 		i++;
 	}
 	return(1);
@@ -76,7 +76,7 @@ void	search(PhoneBook *book)
 		return ;
 	}
 	std::cout << MAGENTA << " ------------------------------------------- " << RESET << std::endl;
-	std::cout << MAGENTA << "|Index     |Name      |Last Name |Nick Name |" << RESET << std::endl;
+	std::cout << MAGENTA << "|     Index|      Name| Last Name| Nick Name|" << RESET << std::endl;
 	while (index < book->contact_num)
 	{
 		std::cout << MAGENTA << "|-------------------------------------------|" << RESET << std::endl;
@@ -90,7 +90,7 @@ void	search(PhoneBook *book)
 		if (std::cin.eof())
 			exit(0);
 	}
-	index = std::stoi(index_str);
+	index = atoi(index_str.c_str());
 	if (index <= book->contact_num && index > 0)
 		book->contacts[index - 1].show_contact();
 	else 

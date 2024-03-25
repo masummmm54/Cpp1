@@ -11,5 +11,5 @@ int main(int ac, char **av)
 	harl.complain(av[1]);
 
 
-	return (EXIT_SUCCESS);
+	return (0);
 }
