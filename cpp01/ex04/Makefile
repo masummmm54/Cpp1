@@ -17,16 +17,16 @@ CC = c++
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./include/
 
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC = main.cpp replace.cpp
 
 OBJ_DIR = obj
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
-NAME = Human
+NAME = Replace
 
 $(NAME) : $(OBJ_DIR) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-	echo "$(COLOUR_GREEN)Human compiled successfully!$(COLOUR_END)"
+	echo "$(COLOUR_GREEN)$(NAME) compiled successfully!$(COLOUR_END)"
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
@@ -41,7 +41,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	echo "$(COLOUR_CYAN)$(COLOUR_UNDERLINE)Human cleaned successfully!$(COLOUR_END)"
+	echo "$(COLOUR_CYAN)$(COLOUR_UNDERLINE)$(NAME) cleaned successfully!$(COLOUR_END)"
 
 re: fclean all
 

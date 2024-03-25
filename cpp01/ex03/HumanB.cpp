@@ -7,6 +7,8 @@ HumanB::HumanB(std::string name, Weapon &weapon)
 	this->weapon = &weapon;
 }
 
+HumanB::~HumanB () {}
+
 HumanB::HumanB(std::string name)
 {
 	this->name = name;

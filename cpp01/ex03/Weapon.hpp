@@ -12,7 +12,7 @@ class Weapon
 	public:
 	Weapon		();
 	Weapon		(std::string tpye);
-	~Weapon		() {}
+	~Weapon		();
 	void		setType(std::string type);
 	std::string	getType();
 };

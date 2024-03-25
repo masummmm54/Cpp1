@@ -1,5 +1,12 @@
 #include "phonebook.hpp"
 
+PhoneBook::PhoneBook() {}
+
+PhoneBook::~PhoneBook()
+{
+	std::cout << RED << "Phonebook closing..." << RESET << std::endl;
+}
+
 void	visuale_contact(std::string n)
 {
 	int	m = 0;
