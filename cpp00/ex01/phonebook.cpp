@@ -15,7 +15,7 @@ void	visuale_contact(std::string n)
 	{
 		if (n[m] != '\0')
 		{
-			if (m == 9)
+			if (m == 9 && n[10] != '\0')
 				std::cout << YELLOW << "." << RESET;
 			else
 				std::cout << YELLOW << n[m] << RESET;
