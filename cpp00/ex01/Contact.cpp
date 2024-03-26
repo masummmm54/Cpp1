@@ -1,12 +1,9 @@
 
 #include "Contact.hpp"
 
-Contact::~Contact ()
-{
-	std::cout << RED << "Contact deleted."<< RESET << std::endl;
-}
+Contact::~Contact () {}
 
-int	all_num(std::string number)
+bool	all_num(std::string number)
 {
 	int i = 0;
 
@@ -15,10 +12,20 @@ int	all_num(std::string number)
 	while (number[i])
 	{
 		if (!(std::isdigit(number[i])))
-			return (std::cout << RED << "Please enter a number" << RESET <<std::endl , 0);
+			return (std::cout << RED << "Please enter a number" << RESET <<std::endl , false);
 		i++;
 	}
-	return(1);
+	return(true);
+}
+
+bool	isWhitespace(const std::string &str)
+{
+	for (int c = 0; str[c] != '\0'; c++)
+	{
+		if (!std::isspace(str[c]))
+			return (true);
+	}
+	return (false);
 }
 
 std::string	take_input(std::string msg)
@@ -43,7 +50,7 @@ std::string	take_input(std::string msg)
 	}
 	else
 	{
-		while (input.empty())
+		while (input.empty() || !isWhitespace(input))
 		{
 			std::cout << GREEN << msg << RESET;
 			if (!std::getline(std::cin, input))
