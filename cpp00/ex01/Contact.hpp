@@ -26,11 +26,16 @@ class Contact
 	std::string		dark_secret;
 
 	public:
-	Contact (std::string name, std::string last_name, std::string nick_name, std::string phone_number, std::string dark_secret);
 	Contact ();
 	~Contact ();
+
 	void	show_contact();
 	void	print_contac(int index);
+	void	get_name();
+	void	get_last_name();
+	void	get_nick_name();
+	void	get_phone_number();
+	void	get_dark_secret();
 };
 
 #endif

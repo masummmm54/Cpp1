@@ -1,13 +1,14 @@
 
 #include "replace.hpp"
 
+Replace::Replace() {}
 
-Replace::Replace (std::string av[5])
+Replace::Replace (std::string infile, std::string finde, std::string rep)
 {
-	this->infile = av[1];
+	this->infile = infile;
 	this->outfile = infile + ".replace";
-	this->finde = av[2];
-	this->rep = av[3];
+	this->finde = finde;
+	this->rep = rep;
 }
 
 Replace::~Replace () {}

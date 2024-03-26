@@ -1,16 +1,87 @@
 
 #include "Contact.hpp"
 
-Contact::~Contact () {}
-
-Contact::Contact(std::string name, std::string last_name, std::string nick_name,
-		std::string phone_number, std::string dark_secret)
+Contact::~Contact ()
 {
-	this->name = name;
-	this->last_name = last_name;
-	this->nick_name = nick_name;
-	this->phone_number = phone_number;
-	this->dark_secret = dark_secret;
+	std::cout << RED << "Contact deleted."<< RESET << std::endl;
+}
+
+int	all_num(std::string number)
+{
+	int i = 0;
+
+	if (number[i] == '+')
+		i++;
+	while (number[i])
+	{
+		if (!(std::isdigit(number[i])))
+			return (std::cout << RED << "Please enter a number" << RESET <<std::endl , 0);
+		i++;
+	}
+	return(1);
+}
+
+std::string	take_input(std::string msg)
+{
+	std::string input;
+
+	if (msg == "Contact phone number: ")
+	{
+		while (input.empty() || !all_num(input))
+		{
+			std::cout << GREEN << msg << RESET;
+			if (!std::getline(std::cin, input))
+			{
+				if (std::cin.eof())
+				{
+					std::cout << std::endl;
+					exit(0);
+				}
+				std::cin.clear();
+			}
+		}
+	}
+	else
+	{
+		while (input.empty())
+		{
+			std::cout << GREEN << msg << RESET;
+			if (!std::getline(std::cin, input))
+			{
+				if (std::cin.eof())
+				{
+					std::cout << std::endl;
+					exit(0);
+				}
+			}
+		}
+	}
+	return (input);
+}
+
+void	Contact::get_name()
+{
+	this->name = take_input("Contact name: ");
+}
+
+void	Contact::get_last_name()
+{
+	this->last_name = take_input("Contact last name: ");
+}
+
+void	Contact::get_nick_name()
+{
+	this->nick_name = take_input("Contact nick name: ");
+}
+
+void	Contact::get_phone_number()
+{
+	this->phone_number = take_input("Contact phone number: ");
+}
+
+void	Contact::get_dark_secret()
+{
+	this->dark_secret = take_input("Contact darkest secret: ");
 }
 
 Contact::Contact()

@@ -17,7 +17,8 @@ class Replace
 	std::string rep;
 
 	public:
-	Replace(std::string av[5]);
+	Replace(std::string infile, std::string finde, std::string rep);
+	Replace();
 	~Replace();
 
 	void	get_lines();
