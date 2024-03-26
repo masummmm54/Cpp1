@@ -50,7 +50,7 @@ void	PhoneBook::search()
 		index++;
 	}
 	std::cout << MAGENTA << " ------------------------------------------- " << RESET << std::endl;
-	std::cout << BLUE << "Index number for contact: " << RESET << std::endl;
+	std::cout << BLUE << "Enter a index number for contact:\t" << RESET;
 	if (!std::getline(std::cin, index_str))
 	{
 		if (std::cin.eof())

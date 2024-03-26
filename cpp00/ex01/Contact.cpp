@@ -12,7 +12,7 @@ bool	all_num(std::string number)
 	while (number[i])
 	{
 		if (!(std::isdigit(number[i])))
-			return (std::cout << RED << "Please enter a number" << RESET <<std::endl , false);
+			return (std::cout << RED << "Please enter a phone number" << RESET <<std::endl , false);
 		i++;
 	}
 	return(true);
@@ -32,7 +32,7 @@ std::string	take_input(std::string msg)
 {
 	std::string input;
 
-	if (msg == "Contact phone number: ")
+	if (msg == "Enter Contact Phone Number  : ")
 	{
 		while (input.empty() || !all_num(input))
 		{
@@ -68,27 +68,27 @@ std::string	take_input(std::string msg)
 
 void	Contact::get_name()
 {
-	this->name = take_input("Contact name: ");
+	this->name = take_input("Enter Contact Name          : ");
 }
 
 void	Contact::get_last_name()
 {
-	this->last_name = take_input("Contact last name: ");
+	this->last_name = take_input("Enter Contact Last Name     : ");
 }
 
 void	Contact::get_nick_name()
 {
-	this->nick_name = take_input("Contact nick name: ");
+	this->nick_name = take_input("Enter Contact Nick Name     : ");
 }
 
 void	Contact::get_phone_number()
 {
-	this->phone_number = take_input("Contact phone number: ");
+	this->phone_number = take_input("Enter Contact Phone Number  : ");
 }
 
 void	Contact::get_dark_secret()
 {
-	this->dark_secret = take_input("Contact darkest secret: ");
+	this->dark_secret = take_input("Enter Contact Darkest Secret: ");
 }
 
 Contact::Contact()
