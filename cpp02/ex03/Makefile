@@ -17,12 +17,12 @@ CC = c++
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./include/
 
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJ_DIR = obj
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
-NAME = fixed
+NAME = bsp
 
 $(NAME) : $(OBJ_DIR) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)

@@ -9,7 +9,6 @@ int	main(int ac, char **av)
 	ziombe1->announce();
 	randomChump("zombie22");
 
-
 	delete ziombe1;
 	return (0);
 }
