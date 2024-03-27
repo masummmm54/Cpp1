@@ -21,8 +21,8 @@ class Replace
 	Replace();
 	~Replace();
 
-	void	get_lines();
-	void	replace_str(std::string str);
+	int	replace();
+	std::string manupulate(std::string str);
 };
 
 

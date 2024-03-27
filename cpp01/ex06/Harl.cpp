@@ -57,10 +57,19 @@ void Harl::complain(std::string level)
 	{
 		case 0:
 			(this->*functions[0])();
+			(this->*functions[1])();
+			(this->*functions[2])();
+			(this->*functions[3])();
+			break;
 		case 1:
 			(this->*functions[1])();
+			(this->*functions[2])();
+			(this->*functions[3])();
+			break;
 		case 2:
 			(this->*functions[2])();
+			(this->*functions[3])();
+			break;
 		case 3:
 			(this->*functions[3])();
 			break;

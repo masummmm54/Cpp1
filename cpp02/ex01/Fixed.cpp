@@ -15,7 +15,7 @@ Fixed::Fixed(int const i)
 
 Fixed::Fixed(float const i)
 {
-	fixed_point = std::roundf(i * (1 << fractionalBits));
+	fixed_point = roundf(i * (1 << fractionalBits));
 	std::cout << "Float constructor called" << std::endl;
 }
 
