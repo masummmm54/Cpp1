@@ -1,0 +1,42 @@
+==asdasdadasd asdasd asd asd a
+adasd
+== Memcheck, a memory error detector
+==asdasdadasd asdasd asd asd a
+adasd
+== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==asdasdadasd asdasd asd asd a
+adasd
+== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==asdasdadasd asdasd asd asd a
+adasd
+== Command: ./Replace data str masum
+==asdasdadasd asdasd asd asd a
+adasd
+==
+==asdasdadasd asdasd asd asd a
+adasd
+==
+==asdasdadasd asdasd asd asd a
+adasd
+== HEAP SUMMARY:
+==asdasdadasd asdasd asd asd a
+adasd
+==     in use at exit: 0 bytes in 0 blocks
+==asdasdadasd asdasd asd asd a
+adasd
+==   total heap usage: 10 allocs, 10 frees, 90,430 bytes allocated
+==asdasdadasd asdasd asd asd a
+adasd
+==
+==asdasdadasd asdasd asd asd a
+adasd
+== All heap blocks were freed -- no leaks are possible
+==asdasdadasd asdasd asd asd a
+adasd
+==
+==asdasdadasd asdasd asd asd a
+adasd
+== For lists of detected and suppressed errors, rerun with: -s
+==asdasdadasd asdasd asd asd a
+adasd
+== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

@@ -7,6 +7,7 @@ int	main(int ac, char **av)
 
 	Zombie *ziombe1 = newZombie("zombie11");
 	ziombe1->announce();
+
 	randomChump("zombie22");
 
 	delete ziombe1;

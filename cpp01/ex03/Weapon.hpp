@@ -14,7 +14,7 @@ class Weapon
 	Weapon		(std::string tpye);
 	~Weapon		();
 	void		setType(std::string type);
-	std::string	getType();
+	const std::string	getType();
 };
 
 #endif

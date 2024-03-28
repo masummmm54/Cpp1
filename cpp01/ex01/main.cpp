@@ -1,12 +1,10 @@
 #include "Zombie.hpp"
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	(void)ac;
-	(void)av;
 	int N = 13;
 
-	Zombie *ziombe1 = zombieHorde(N, "zombie1");
+	Zombie *ziombe1 = zombieHorde(N, "zombie11");
 
 	for (int i = 0; i < N; i++)
 	{

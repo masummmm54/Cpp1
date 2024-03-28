@@ -13,7 +13,7 @@ class Replace
 	private:
 	std::string infile;
 	std::string outfile;
-	std::string finde;
+	std::string to_find;
 	std::string rep;
 
 	public:

@@ -10,10 +10,7 @@ Zombie::~Zombie ()
 	std::cout << this->name << " destroyed." << std::endl;
 }
 
-Zombie::Zombie()
-{
-	this->name = "(null)";
-}
+Zombie::Zombie() {}
 
 void	Zombie::announce()
 {
@@ -30,7 +27,7 @@ Zombie *zombieHorde(int N, std::string name)
 	Zombie *zombie = new Zombie[N];
 	for (int i = 0; i < N; i++)
 	{
-		zombie[i] = Zombie(name);
+		zombie[i].add_name(name);
 	}
 	return (zombie);
 }
