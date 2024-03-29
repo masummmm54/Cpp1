@@ -25,6 +25,7 @@ std::string Replace::manupulate(std::string str)
 			break ;
 		str.erase(pos, to_find.length());
 		str.insert(pos, rep);
+		pos += rep.length();
 	}
 	return (str);
 }
@@ -47,7 +48,11 @@ int	Replace::replace()
 		std::cerr << "Error: Unable to open file: " << outfile << std::endl;
 		return (1);
 	}
-	std::getline(fs, str, '\0');
+	if (!std::getline(fs, str, '\0'))
+	{
+		std::cerr << "Error: Unable to read file" << std::endl;
+		return (1);
+	}
 	if (!to_find.empty())
 		str = manupulate(str);
 	out << str;

@@ -3,7 +3,7 @@
 ==2589== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
 ==2589== Command: ./Replace data str masum
 ==2589==
-==2589==
+==2589== hihihi hi hi hi hi
 ==2589== HEAP SUMMARY:
 ==2589==     in use at exit: 0 bytes in 0 blocks
 ==2589==   total heap usage: 10 allocs, 10 frees, 90,430 bytes allocated

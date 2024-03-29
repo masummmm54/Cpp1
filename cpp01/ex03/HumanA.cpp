@@ -8,9 +8,9 @@ HumanA::~HumanA() {}
 
 void	HumanA::attack()
 {
-	//if (!weapon.getType().empty())
+	if (!weapon.getType().empty())
 		std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
-	//else
-	//	std::cout << this->name << " does not have a weapon " << this->weapon.getType() << std::endl;
+	else
+		std::cout << this->name << " does not have a weapon " << this->weapon.getType() << std::endl;
 }
 
