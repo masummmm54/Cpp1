@@ -19,12 +19,6 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	return (false);
 }
 
-
-
-
-
-
-
 Fixed	distance(Fixed x1, Fixed y1, Fixed x2, Fixed y2)
 {
 	Fixed presqrt;

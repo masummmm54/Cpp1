@@ -2,7 +2,7 @@
 #include "ScavTrap.hpp"
 
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	_name = "(null)";
 	_health = 100;

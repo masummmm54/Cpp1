@@ -1,9 +1,8 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed() : fixed_point(0) 
 {
-	this->fixed_point = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -62,5 +61,5 @@ int Fixed::toInt( void ) const
 
 float Fixed::toFloat( void ) const
 {
-	return (static_cast<float> (this->getRawBits()) / (1 << fractionalBits));
+	return ((float)(this->getRawBits()) / (1 << fractionalBits));
 }

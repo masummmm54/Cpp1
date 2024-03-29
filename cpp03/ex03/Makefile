@@ -17,7 +17,7 @@ CC = c++
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./include/
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJ_DIR = obj
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))

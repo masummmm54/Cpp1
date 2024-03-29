@@ -1,7 +1,7 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
 	_name = "(null)";
 	_health = 100;

@@ -1,12 +1,13 @@
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main ( void )
 {
 
-	FragTrap a("masum");
+	DiamondTrap a("masum");
 	a.highFivesGuys();
+	a.attack(" someone ");
+	
 
 	return (0);
 }
