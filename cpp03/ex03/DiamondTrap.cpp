@@ -12,7 +12,7 @@ DiamondTrap::DiamondTrap(std::string name) : FragTrap(name), ScavTrap(name)
 	_name = name;
 	_health = FragTrap::_health;
 	_energy = ScavTrap::_energy;
-	_damage = FragTrap::_damage;
+	_damage = FragTrap::_damage;	
 	std::cout << "DiamondTrap standart created!" << std::endl;
 }
 
