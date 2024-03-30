@@ -9,10 +9,12 @@ Point::Point(const Fixed &x1, const Fixed &y1) : x(x1), y(y1) {}
 
 Point::Point(const Point& p) : x(p.x), y(p.y) {}
 
-const Point& Point::operator=(const Point &other)
+Point& Point::operator=(const Point &other)
 {
 	if (this != &other)
 	{
+		Point x(other.get_x(), other.get_y());
+		std::swap(*this, x);
 	}
 	return *this;
 }

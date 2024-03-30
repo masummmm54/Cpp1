@@ -18,6 +18,8 @@ int main( void )
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << c << std::endl;
+
+	std::cout << Fixed::max(a, c) << std::endl;
 	
 
 	return (0);

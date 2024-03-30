@@ -16,8 +16,8 @@ int main( void )
 	bool is_triangle = bsp(a, b, c, p);
 
 	if (is_triangle)
-		print("INSIDE TRIANGLE.");
+		std::cout << "INSIDE TRIANGLE." << std::endl;
 	else
-		print("NOT INSIDE TRIANGLE.");
+		std::cout << "NOT INSIDE TRIANGLE." << std::endl;
 	return (0);
 }

@@ -124,14 +124,20 @@ Fixed& Fixed::operator--( void )
 
 Fixed Fixed::operator++(int)
 {
+	Fixed t;
+
+	t = *this;
 	this->fixed_point += 1;
-	return (*this);
+	return (t);
 }
 
 Fixed Fixed::operator--(int)
 {
+	Fixed t;
+
+	t = *this;
 	this->fixed_point -= 1;
-	return (*this);
+	return (t);
 }
 
 // overloaded member functions
@@ -146,12 +152,12 @@ const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
 	return (a > b ? a : b);
 }
 
-Fixed &min(Fixed &a, Fixed &b)
+Fixed& Fixed::min(Fixed &a, Fixed &b)
 {
 	return (a < b ? a : b);
 }
 
-Fixed &max(Fixed &a, Fixed &b)
+Fixed& Fixed::max(Fixed &a, Fixed &b)
 {
 	return (a > b ? a : b);
 }

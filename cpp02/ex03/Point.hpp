@@ -14,7 +14,7 @@ public:
 	Point();
 	Point(const Point& p);
 	Point(const Fixed &x1, const Fixed &y1);
-	const Point& operator=(const Point &other);
+	Point& operator=(const Point &other);
 	Fixed get_x() const;
 	Fixed get_y() const;
 };
