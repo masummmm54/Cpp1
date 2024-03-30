@@ -12,6 +12,7 @@ private:
 	unsigned int	_damage;
 public:
 	~ClapTrap();
+	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &p);
 	ClapTrap& operator=(const ClapTrap &other);

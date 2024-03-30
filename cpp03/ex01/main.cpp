@@ -5,11 +5,14 @@ int main ( void )
 {
 
 	ScavTrap a;
-	ClapTrap b("masum");
+
 	ScavTrap c("dede");
 
 	a = c;
 	a.attack("anan");
+	a.beRepaired(1);
+	a.guardGate();
+	a.takeDamage(120);
 	a.guardGate();
 
 	return (0);

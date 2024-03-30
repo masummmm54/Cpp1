@@ -15,11 +15,8 @@ public:
 	DiamondTrap(const DiamondTrap& p);
 	DiamondTrap& operator=(const DiamondTrap &other);
 
-    using ScavTrap::attack;
 	void	whoAmI(void);
-    using FragTrap::hitPoints;
-    using FragTrap::attackDamage;
-    using ScavTrap::energyPoints;
+	using ScavTrap::attack;
 
 };
 

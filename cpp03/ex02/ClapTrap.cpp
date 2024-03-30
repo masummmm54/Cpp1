@@ -1,24 +1,24 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string n) : _name(n), _health(10), _energy(10), _damage(0)
+ClapTrap::ClapTrap() : _name("(null)"), _health(10), _energy(10), _damage(0)
 {
-	std::cout << "ClapTrap created " << _name << std::endl;
+	std::cout << ">Default ClapTrap constructor has been called!" << std::endl;
 }
 
-ClapTrap::ClapTrap() : _name("empty"), _health(10), _energy(10), _damage(0)
+ClapTrap::ClapTrap(std::string n) : _name(n), _health(10), _energy(10), _damage(0)
 {
-	std::cout << "Default ClapTrap created " << _name << std::endl;
+	std::cout << ">Standart ClapTrap constructor has been called! " << _name << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap destroyed " << _name << std::endl;
+	std::cout << ">ClapTrap " << _name << " destroyed! " << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& p)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << ">Copy constructor called" << std::endl;
 	_name = p._name;
 	_health = p._health;
 	_damage = p._damage;
@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(const ClapTrap& p)
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << ">Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		_name = other._name;
@@ -43,15 +43,15 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (_energy > 0 && _health > 0)
 	{
-		std::cout << "ClapTrap " << _name << " attacts " << target << " causing " << _damage << " points of damage!" << std::endl;
+		std::cout << ">ClapTrap " << _name << " attacts " << target << " causing " << _damage << " points of damage!";
 		_energy--;
-		printmsg(" remainin energy is: ");
+		std::cout << " | Remaining energy is : ";
 		std::cout << _energy << std::endl;
 	}
 	else if (_health < 1)
 		printmsg(" cannot attack because he is dead!\n");
 	else
-		std::cout << "ClapTrap " << _name << " has no energy to attack!" << std::endl;
+		std::cout << ">ClapTrap " << _name << " has no energy to attack!" << " | Remanin energy is: " << _energy << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -60,14 +60,14 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	{
 		_health -= amount;
 		printmsg(" has taken damage point of : ");
-		std::cout << amount << std::endl;
+		std::cout << amount;
 		if (_health > 0)
 		{
-			printmsg(" reamaining health is : ");
+			std::cout << " | Remaining health is : ";
 			std::cout << _health << std::endl;
 		}
 		else
-			printmsg(" is dead!\n");
+			std::cout << " | It is dead!" << std::endl;
 	}
 	else
 		printmsg(" has already dead you cruel!\n");
@@ -79,11 +79,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		_energy--;
 		_health += amount;
-		printmsg(" repaired itself amount of: ");
-		std::cout << amount << std::endl;
-		printmsg(" remaining energy is: ");
-		std::cout << _energy << std::endl;
-		printmsg(" current healt is: ");
+		printmsg(" repaired itself amount of : ");
+		std::cout << amount;
+		std::cout << " | Remaining energy is : ";
+		std::cout << _energy;
+		std::cout << " | Current healt is : ";
 		std::cout << _health << std::endl;
 	}
 	else if (_health < 1)
@@ -94,5 +94,5 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 void	ClapTrap::printmsg(std::string msg)
 {
-	std::cout << "ClapTrap " << _name << msg;
+	std::cout << ">ClapTrap " << _name << msg;
 }
