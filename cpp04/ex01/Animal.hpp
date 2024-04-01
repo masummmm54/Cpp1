@@ -3,6 +3,7 @@
 
 
 #include <iostream>
+#include "Brain.hpp"
 
 class Animal
 {
@@ -13,11 +14,12 @@ public:
 	Animal(std::string Type);
 	virtual ~Animal();
 	Animal(const Animal &p);
-	Animal& operator=(const Animal &other);
+	virtual Animal& operator=(const Animal &other);
 
 	std::string		getType() const;
 	void			setType(std::string Type);
 	virtual void	makeSound() const;
+	virtual Brain*	getBrain();
 };
 
 

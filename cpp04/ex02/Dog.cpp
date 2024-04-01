@@ -1,19 +1,19 @@
 #include "Dog.hpp"
 
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : Animal("Dog") , brains(new Brain())
 {
 	std::cout << ">Dog Constructor called!" << std::endl;
 }
 
 Dog::~Dog()
 {
+	delete brains;
 	std::cout << ">Dog Deconstructor called!" << std::endl;
 }
 
-Dog::Dog(const Dog& p) : Animal("Dog")
+Dog::Dog(const Dog& p) : Animal()
 {
-	type = p.getType();
 	*this = p;
 	std::cout << ">Dog copy constructor called" << std::endl;
 }
@@ -24,6 +24,8 @@ Dog& Dog::operator=(const Dog &other)
 	if (this != &other)
 	{
 		type = other.getType();
+		delete brains;
+		brains = new Brain (*other.brains);
 	}
 	return *this;
 }
@@ -31,4 +33,9 @@ Dog& Dog::operator=(const Dog &other)
 void Dog::makeSound() const
 {
 	std::cout << "Hoav Hoav!!!!" << std::endl;
+}
+
+Brain* Dog::getBrain()
+{
+	return (brains);
 }
