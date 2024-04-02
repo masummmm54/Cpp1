@@ -1,8 +1,11 @@
+
+#pragma once
+
 #ifndef CURE_HPP
 #define CURE_HPP
 
 #include "AMateria.hpp"
-#include <iostream>
+#include "Character.hpp"
 
 class Cure : public AMateria
 {
@@ -11,7 +14,8 @@ private:
 public:
 	Cure();
 	~Cure();
-	std::string const & getType() const;
+	Cure(const Cure& p);
+	Cure& operator=(const Cure &other);
 
 	AMateria* clone() const;
 	void use(ICharacter& target);

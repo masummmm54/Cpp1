@@ -1,8 +1,12 @@
-#ifndef IMATERIASOURCE
-#define IMAGERIASOURCE
 
-#include "AMateria.hpp"
+#pragma once
+
+#ifndef IMATERIASOURCE
+#define IMATERIASOURCE
+
 #include <iostream>
+
+class AMateria;
 
 class IMateriaSource
 {

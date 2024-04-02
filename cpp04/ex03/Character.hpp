@@ -1,17 +1,27 @@
+
+#pragma once
+
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
 #include <iostream>
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public ICharacter
 {
 private:
 	std::string _name;
+	AMateria	*invent[4];
+	int			size;
+
 public:
 	Character();
 	~Character();
 	Character(std::string name);
+	Character(const Character& p);
+	Character& operator=(const Character &other);
+
 	std::string const& getName() const;
 	void equip(AMateria *m);
 	void unequip(int idx);
