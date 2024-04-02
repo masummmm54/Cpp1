@@ -24,12 +24,11 @@ int main( void )
 	}
 
 	Dog a;
-	Dog b;
 
 	a.getBrain()->setIdea("mausm");
 	a.getBrain()->setIdea("neden boyle");
 	a.getBrain()->setIdea("second idea");
-	b = a;
+	Dog b = a;
 	a.getBrain()->setIdea("third idea");
 	a.getBrain()->setIdea("fourth idea");
 	b.getBrain()->setIdea("random idea");

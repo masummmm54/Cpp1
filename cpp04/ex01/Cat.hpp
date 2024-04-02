@@ -15,8 +15,8 @@ public:
 	~Cat();
 	Cat& operator=(const Cat& other);
 
-	void	makeSound() const = 0;
-	Brain*	getBrain() = 0;
+	void	makeSound() const;
+	Brain*	getBrain();
 };
 
 

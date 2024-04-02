@@ -33,6 +33,12 @@ Character& Character::operator=(const Character &other)
 	if (this != &other)
 	{
 		_name = other._name;
+		size = other.size;
+		for (int i = 0; i < 4; i++)
+		{
+			delete invent[i];
+			invent[i] = other.invent[i]->clone();
+		}
 	}
 	return *this;
 }
@@ -47,9 +53,7 @@ void Character::equip(AMateria *m)
 	if (size == 4)
 		std::cout << "No more space left in the inventory for " << _name << std::endl;
 	else
-	{
 		invent[size++] = m;
-	}
 }
 
 void Character::unequip(int idx)
