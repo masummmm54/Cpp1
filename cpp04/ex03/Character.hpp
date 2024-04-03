@@ -13,7 +13,7 @@ class Character : public ICharacter
 private:
 	std::string _name;
 	AMateria	*invent[4];
-	AMateria	*garbage[256];
+	AMateria	**garbage;
 	int			size;
 	int			garbage_num;
 
@@ -28,6 +28,7 @@ public:
 	void equip(AMateria *m);
 	void unequip(int idx);
 	void use(int idx, ICharacter& target);
+	void HandleGarbage(int idx);
 };
 
 

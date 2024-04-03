@@ -47,6 +47,7 @@ int main ()
 	me->use(0, *bob);
 	me->use(0, *bob);
 	me->unequip(0);
+	me->unequip(0);
 	me->use(0, *bob);
 	me->use(1, *bob);
 	me->use(2, *bob);

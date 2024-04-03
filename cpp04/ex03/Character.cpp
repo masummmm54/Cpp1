@@ -1,21 +1,21 @@
 
 #include "Character.hpp"
 
-Character::Character() : ICharacter(), _name("null"), size(0), garbage_num(0)
+Character::Character() : ICharacter(), _name("null"), size(0), garbage_num(1)
 {
 	for (int i = 0; i < 4; i++)
 		invent[i] = NULL;
-	for (int i = 0; i < 256; i++)
-		garbage[i] = NULL;
+	garbage = new AMateria*[1];
+	garbage[0] = NULL;
 }
 
 
-Character::Character(std::string name) : ICharacter(), _name(name), size(0), garbage_num(0)
+Character::Character(std::string name) : ICharacter(), _name(name), size(0), garbage_num(1)
 {
 	for (int i = 0; i < 4; i++)
 		invent[i] = NULL;
-	for (int i = 0; i < 256; i++)
-		garbage[i] = NULL;
+	garbage = new AMateria*[1];
+	garbage[0] = NULL;
 }
 
 
@@ -29,6 +29,7 @@ Character::~Character()
 	{
 		delete garbage[i];
 	}
+	delete[] garbage;
 }
 
 Character::Character(const Character& other)
@@ -36,6 +37,7 @@ Character::Character(const Character& other)
 	_name = other._name;
 	size = other.size;
 	garbage_num = other.garbage_num;
+	garbage = new AMateria*[other.garbage_num];
 	for (int i = 0; i < 4; i++)
 	{
 		if (other.invent[i])
@@ -43,7 +45,7 @@ Character::Character(const Character& other)
 		else
 			invent[i] = NULL;
 	}
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < garbage_num; i++)
 	{
 		if (other.garbage[i])
 			garbage[i] = other.garbage[i]->clone();
@@ -59,6 +61,8 @@ Character& Character::operator=(const Character &other)
 		_name = other._name;
 		size = other.size;
 		garbage_num = other.garbage_num;
+		delete[] garbage;
+		garbage = new AMateria*[other.garbage_num];
 		for (int i = 0; i < 4; i++)
 		{
 			if (invent[i])
@@ -68,7 +72,7 @@ Character& Character::operator=(const Character &other)
 			else
 				invent[i] = NULL;
 		}
-		for (int i = 0; i < 256; i++)
+		for (int i = 0; i < garbage_num; i++)
 		{
 			if (garbage[i])
 				delete garbage[i];
@@ -103,7 +107,7 @@ void Character::unequip(int idx)
 		std::cout << "No materia on this inventory space for " << _name << std::endl;
 	else if (idx < size && idx >= 0)
 	{
-		garbage[garbage_num++] = invent[idx];
+		HandleGarbage(idx);
 		invent[idx] = NULL;
 		for (; idx < size - 1; idx++)
 		{
@@ -119,4 +123,17 @@ void Character::use(int idx, ICharacter& target)
 		invent[idx]->use(target);
 	else
 		std::cout << "No materia on this inventory space for " << _name << std::endl;
+}
+
+void	Character::HandleGarbage(int idx)
+{
+	AMateria **newgarbage;
+	newgarbage = new AMateria*[garbage_num + 1];
+	for (int i = 0; i < garbage_num; i++)
+		newgarbage[i] = garbage[i];
+	newgarbage[garbage_num - 1] = invent[idx];
+	newgarbage[garbage_num] = NULL;
+	delete[] garbage;
+	garbage = newgarbage;
+	garbage_num++;
 }
