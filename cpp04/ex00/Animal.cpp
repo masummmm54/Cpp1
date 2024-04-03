@@ -19,7 +19,6 @@ Animal::~Animal()
 Animal::Animal(const Animal& p)
 {
 	type = p.getType();
-	*this = p;
 	std::cout << ">Animal Copy constructor called" << std::endl;
 }
 

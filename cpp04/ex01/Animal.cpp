@@ -16,9 +16,9 @@ Animal::~Animal()
 	std::cout << ">Animal deconstructor called!" << std::endl;
 }
 
-Animal::Animal(const Animal& p)
+Animal::Animal(const Animal& other)
 {
-	*this = p;
+	type = other.type;
 	std::cout << ">Animal Copy constructor called" << std::endl;
 }
 

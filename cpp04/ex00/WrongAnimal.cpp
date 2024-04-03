@@ -19,7 +19,6 @@ WrongAnimal::~WrongAnimal()
 WrongAnimal::WrongAnimal(const WrongAnimal& p)
 {
 	type = p.getType();
-	*this = p;
 	std::cout << ">WrongAnimal Copy constructor called" << std::endl;
 }
 

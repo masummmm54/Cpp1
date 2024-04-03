@@ -11,9 +11,8 @@ Cat::~Cat()
 	std::cout << ">Cat deconstructer called!" << std::endl;
 }
 
-Cat::Cat(const Cat& p) : Animal()
+Cat::Cat(const Cat& p) : Animal("cat")
 {
-	*this = p;
 	type = p.getType();
 	std::cout << ">Cat copy constructor called" << std::endl;
 }
