@@ -14,6 +14,7 @@ int main ()
 	src->learnMateria(new Cure());
 	src->learnMateria(new Ice());
 	src->learnMateria(new Ice());
+	src->learnMateria(new Ice());
 
 	ICharacter* me = new Character("masum");
 
@@ -21,6 +22,8 @@ int main ()
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
@@ -41,10 +44,10 @@ int main ()
 	tmp1 = src->createMateria("cure");
 	som.equip(tmp1);
 
-	som.use(0, *bob);
-	som.use(1, *bob);
-	ash.use(0, *bob);
-	ash.use(1, *bob);
+	som.use(0, *bob); // should use ice 
+	som.use(1, *bob); // should use cure
+	ash.use(0, *bob); // should use ice 
+	ash.use(1, *bob); // should not use cure since it is deep copy.
 
 	me->use(0, *bob);
 	me->use(0, *bob);
