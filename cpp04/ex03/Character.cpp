@@ -60,8 +60,12 @@ Character& Character::operator=(const Character &other)
 	{
 		_name = other._name;
 		size = other.size;
-		garbage_num = other.garbage_num;
+		for (int i = 0; i < garbage_num; i++)
+		{
+			delete garbage[i];
+		}
 		delete[] garbage;
+		garbage_num = other.garbage_num;
 		garbage = new AMateria*[other.garbage_num];
 		for (int i = 0; i < 4; i++)
 		{
@@ -74,8 +78,6 @@ Character& Character::operator=(const Character &other)
 		}
 		for (int i = 0; i < garbage_num; i++)
 		{
-			if (garbage[i])
-				delete garbage[i];
 			if (other.garbage[i])
 				garbage[i] = other.garbage[i]->clone();
 			else

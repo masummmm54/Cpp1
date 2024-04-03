@@ -31,11 +31,13 @@ int main ()
 
 	ICharacter* bob  = new Character("bob");
 
-	Character som("som");
+	Character ash("ash");
+	Character dem("dem");
 	AMateria* tmp1;
 	tmp1 = src->createMateria("ice");
-	som.equip(tmp1);
-	Character ash = som;
+	ash.equip(tmp1);
+	dem = ash;
+	Character som = ash;
 	tmp1 = src->createMateria("cure");
 	som.equip(tmp1);
 
