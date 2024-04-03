@@ -1,18 +1,25 @@
 
 #include "DiamondTrap.hpp"
 
-int main ( void )
+void ClapTrap::PrintStatus( void )
 {
-
-	DiamondTrap a("masum");
-	a.highFivesGuys();
-	a.guardGate();
-	a.attack(" someone ");
-	a.whoAmI();
-	a.beRepaired(1);
-	a.takeDamage(120);
-	a.highFivesGuys();
-	a.whoAmI();
-
-	return (0);
+    std::cout << std::endl;
+    std::cout << "-----Health status------" << std::endl;
+    std::cout << _health << ": Hit points = " << _health << " Energy points = "
+        << _energy << " Attack damage = " << _damage << std::endl;
+    std::cout << "------------------------"  << std::endl;
+    std::cout << std::endl;
+}
+int main( void )
+{
+    DiamondTrap FirstPerson("Dave");
+    FirstPerson.whoAmI();
+    FirstPerson.PrintStatus();
+    DiamondTrap SecondPerson("Jimmy");
+    SecondPerson = FirstPerson;
+    SecondPerson.PrintStatus();
+    FirstPerson.attack("Johnno");
+    DiamondTrap ThirdPerson = FirstPerson;
+    ThirdPerson.PrintStatus();
+    ThirdPerson.takeDamage(20);
 }

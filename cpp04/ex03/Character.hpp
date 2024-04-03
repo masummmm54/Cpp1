@@ -13,7 +13,9 @@ class Character : public ICharacter
 private:
 	std::string _name;
 	AMateria	*invent[4];
+	AMateria	*garbage[256];
 	int			size;
+	int			garbage_num;
 
 public:
 	Character();

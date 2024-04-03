@@ -6,6 +6,7 @@ int main( void )
 {
 	int		num = 12;
 	Animal	*j[num];
+	//Animal l;
 
 	for (int i = 0; i < num; i++)
 	{
@@ -24,12 +25,11 @@ int main( void )
 	}
 
 	Dog a;
-	Dog b;
 
 	a.getBrain()->setIdea("mausm");
 	a.getBrain()->setIdea("neden boyle");
 	a.getBrain()->setIdea("second idea");
-	b = a;
+	Dog b = a;
 	a.getBrain()->setIdea("third idea");
 	a.getBrain()->setIdea("fourth idea");
 	b.getBrain()->setIdea("random idea");

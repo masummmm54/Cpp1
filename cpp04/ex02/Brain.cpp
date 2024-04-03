@@ -12,11 +12,11 @@ Brain::~Brain()
 	std::cout << ">Brain deconstructer called!" << std::endl;
 }
 
-Brain::Brain(const Brain& p)
+Brain::Brain(const Brain& other)
 {
-	num = p.num;
+	num = other.num;
 	for (int i = 0; i < 100; i++)
-		ideas[i] = p.ideas[i];
+		ideas[i] = other.ideas[i];
 	std::cout << ">Brain copy constructor called" << std::endl;
 }
 

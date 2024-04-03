@@ -12,7 +12,7 @@ private:
 public:
 	Brain();
 	~Brain();
-	Brain(const Brain& p);
+	Brain(const Brain& other);
 	Brain& operator=(const Brain& other);
 
 	void		setIdea(std::string str);

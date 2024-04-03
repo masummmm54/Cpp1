@@ -20,7 +20,13 @@ MateriaSource::~MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource& other)
 {
-	*this = other;
+	for (int i = 0; i < 4; i++)
+	{
+		if (other.materias[i])
+			materias[i] = other.materias[i]->clone();
+		else
+			materias[i] = NULL;
+	}
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource &other)
@@ -30,8 +36,12 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &other)
 		index = other.index;
 		for (int i = 0; i < other.index; i++)
 		{
-			delete materias[i];
-			materias[i] = other.materias[i];
+			if (materias[i])
+				delete materias[i];
+			if (other.materias[i])
+				materias[i] = other.materias[i]->clone();
+			else
+				materias[i] = NULL;
 		}
 	}
 	return *this;

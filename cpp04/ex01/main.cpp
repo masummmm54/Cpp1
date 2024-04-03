@@ -47,7 +47,6 @@ int main( void )
 	std::cout << b.getBrain()->getIdea(3) << std::endl;
 	std::cout << b.getBrain()->getIdea(4) << std::endl;
 
-
 	return (0);
 }
 

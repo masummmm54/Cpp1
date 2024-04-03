@@ -18,7 +18,7 @@ public:
 
 	std::string		getType() const;
 	void			setType(std::string Type);
-	virtual void	makeSound() const;
+	virtual void	makeSound() const = 0;
 	virtual Brain*	getBrain();
 };
 

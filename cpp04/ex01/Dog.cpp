@@ -12,9 +12,8 @@ Dog::~Dog()
 	std::cout << ">Dog Deconstructor called!" << std::endl;
 }
 
-Dog::Dog(const Dog& p) : Animal()
+Dog::Dog(const Dog& other) : Animal("Dog") , brains(new Brain(*(other.brains)))
 {
-	*this = p;
 	std::cout << ">Dog copy constructor called" << std::endl;
 }
 
