@@ -24,31 +24,36 @@ int main( void )
 		delete j[i];
 	}
 
-	Dog a;
+	Dog *a = new Dog;
+	Dog *b = new Dog;
 
-	a.getBrain()->setIdea("mausm");
-	a.getBrain()->setIdea("neden boyle");
-	a.getBrain()->setIdea("second idea");
-	Dog b = a;
-	a.getBrain()->setIdea("third idea");
-	a.getBrain()->setIdea("fourth idea");
-	b.getBrain()->setIdea("random idea");
+	a->getBrain()->setIdea("mausm");
+	a->getBrain()->setIdea("neden boyle");
+	a->getBrain()->setIdea("second idea");
+	*b = *a;
+	a->getBrain()->setIdea("third idea");
+	a->getBrain()->setIdea("fourth idea");
+	b->getBrain()->setIdea("random idea");
 
 
 	std::cout << "a ----------- --------" << std::endl;
-	std::cout << a.getBrain()->getIdea(0) << std::endl;
-	std::cout << a.getBrain()->getIdea(1) << std::endl;
-	std::cout << a.getBrain()->getIdea(2) << std::endl;
-	std::cout << a.getBrain()->getIdea(3) << std::endl;
-	std::cout << a.getBrain()->getIdea(4) << std::endl;
+	std::cout << a->getBrain()->getIdea(0) << std::endl;
+	std::cout << a->getBrain()->getIdea(1) << std::endl;
+	std::cout << a->getBrain()->getIdea(2) << std::endl;
+	std::cout << a->getBrain()->getIdea(3) << std::endl;
+	std::cout << a->getBrain()->getIdea(4) << std::endl;
+	std::cout << a->getBrain()->getIdea(5) << std::endl;
 	std::cout << "b ----------- --------" << std::endl;
-	std::cout << b.getBrain()->getIdea(0) << std::endl;
-	std::cout << b.getBrain()->getIdea(1) << std::endl;
-	std::cout << b.getBrain()->getIdea(2) << std::endl;
-	std::cout << b.getBrain()->getIdea(3) << std::endl;
-	std::cout << b.getBrain()->getIdea(4) << std::endl;
+	std::cout << b->getBrain()->getIdea(0) << std::endl;
+	std::cout << b->getBrain()->getIdea(1) << std::endl;
+	std::cout << b->getBrain()->getIdea(2) << std::endl;
+	std::cout << b->getBrain()->getIdea(3) << std::endl;
+	std::cout << b->getBrain()->getIdea(4) << std::endl;
+	std::cout << b->getBrain()->getIdea(5) << std::endl;
 
 
+	delete b;
+	delete a;
 	return (0);
 }
 
