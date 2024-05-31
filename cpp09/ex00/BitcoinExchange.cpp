@@ -92,9 +92,15 @@ int BitcoinExchange::check_line(std::string date, int flag)
 	std::string msg = flag ? "" : "data.csv : ";
 	getline(ss, line, '-');
 	int y = atol(line.c_str());
+	if (!check_value(0, line, 0))
+		return (false);
 	getline(ss, line, '-');
+	if (!check_value(0, line, 0))
+		return (false);
 	int m = atol(line.c_str());
 	getline(ss, line);
+	if (!check_value(0, line, 0))
+		return (false);
 	int d = atol(line.c_str());
 	if (!check_date(y, m, d))
 		return (error_msg("bad input => " + msg + date), false);
